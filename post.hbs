@@ -1,0 +1,56 @@
+{{!< default}}
+{{#post}}
+	<header class="row no-margin cover relative" style="background-image: url({{image}})">
+		<div class="header__options absolute">
+			<!--<span class="header__option--icon icon-search"></span>-->
+			<a href="{{@blog.url}}"><span class="header__option--icon icon-home"></span></a>
+			<span class="header__option--icon icon-bars"></span>			
+		</div>
+		<div class="col-xs-12 header__content">
+			<h1 class="center-xs header__post--title">{{title}}</h1>
+			<div class="row center-xs header__post--info">				
+				<div class="col-xs-12">{{date published_at format='DD-MM-YYYY'}}</div>
+			</div>			
+		</div>
+	</header>
+	<section class="row padding-tb post__content">		
+		<div class="col-xs-12 post__text">
+			{{content}}
+		</div>
+
+		<div class="row no-margin extra-info">
+			<div class="col-xs-12">
+				<p class="extra__message">Si te gustó éste artículo, compártelo para que otros puedan leerlo :)</p>
+				<div class="extra__social">
+					<a class="share-btn share-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+						<span class="icon-facebook"></span>
+					</a>
+					<a class="share-btn share-twitter" href="https://twitter.com/share?text={{title}}&amp;url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+						<span class="icon-twitter"></span>
+					</a>
+					<a class="share-btn share-google" href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+						<span class="icon-google-plus"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="row no-margin post__author">
+			<div class="">
+				<div class="col-xs-12 col-md-12 post__author--image">
+					<img src="{{author.image}}" alt="{{author.name}}">
+				</div>
+			</div>
+				<div class="col-xs-12 col-md-8 post__author--info">
+					<strong class="post__author--name">{{author.name}}</strong>
+					<p class="no-margin post__author--bio">{{author.bio}}</p>
+					<div class="post__author--website">
+						<a href="{{author.website}}">{{author.website}}</a>
+					</div>
+				</div>	
+			
+		</div>
+{{/post}}
+		<div class="disqus__content margin-tb col-xs-12">
+			<div id="disqus_thread"></div>
+		</div>
+	</section>

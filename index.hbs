@@ -1,0 +1,42 @@
+{{!< default}}
+	<header class="row no-margin relative" style="background-image: url(https://static.platzi.com/media/courses/desarrollo-web1.png)">
+		<div class="header__options absolute">
+			<!--<span class="header__option--icon icon-search"></span>-->
+			<span class="header__option--icon icon-bars"></span>
+		</div>
+		<div class="people__info-header col-xs-12">
+			<h1 class="people__name">Kildare Lauser</h1>
+			<p class="people__description no-margin">Backend Developer</p>			
+		</div>
+	</header>
+
+	<section class="row no-margin posts">
+		{{#foreach posts}}
+		<article class="col-xs-12 col-md-4 post__item">
+			<a href="{{url}}">
+				<figure class="post__imageContainer no-margin">
+					<img class="post__image" src="{{image}}" alt="{{title}}">
+				</figure>
+				<div class="post__info">				
+					<h2 class="post__title no-margin">
+						{{title}}
+					</h2>
+					<div class="row no-margin post__info--author">
+						{{#author}}
+							<div class="col-xs start-xs">{{name}}</div>
+						{{/author}}
+						<div class="col-xs end-xs">{{date format='DD-MM-YYYY'}}</div>
+					</div>
+				</div>
+			</a>
+		</article>
+		{{/foreach}}
+
+		<div class="row no-margin pagination">
+			<div class="col-xs-12">
+				{{#if pagination}}
+					{{{pagination}}}
+				{{/if}}
+			</div>
+		</div>
+	</section>
